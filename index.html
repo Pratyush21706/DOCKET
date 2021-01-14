@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="js/p5.js"></script>
+    <script src="js/p5.dom.min.js"></script>
+    <script src="js/sketch.js"></script>
+
+
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="web-fonts-with-css/css/fontawesome-all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/firebase@6.1.0/firebase.js"></script>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Docket -Keep YourselfOrganised</title>
+   
+</head>
+<body>
+    
+    <div class= "lef"> 
+        <center>
+        <h3 class = "logo">Docket</h3>
+        <button class = "add sw" onclick="showPallet()">+</button>
+        <button class = "add hd" onclick="hidePallet()">×</button>
+            <div class="pallet">
+                <button class = "cl1 cl" onclick="addNote(1)"></button><br>
+                <button class = "cl2 cl" onclick="addNote(2)"></button><br>
+                <button class = "cl3 cl" onclick="addNote(3)"></button><br>
+                <button class = "cl4 cl" onclick="addNote(4)"></button><br>
+                <button class = "cl5 cl" onclick="addNote(5)"></button>
+            </div>
+        </center>
+    </div>
+ 
+    <div class= "top">
+       <button class="pp">Categories</button>
+        <div class="slid">
+            <button class="pp1"  id = "nt" onclick="night()"><i class="fa fa-moon"></i></button>
+            <button class="pp1"  id = "dy" onclick="dys()"><i class="fa fa-sun"></i></button>
+            
+        </div>
+        <div class= "b"></div><h1 id="nam">Notes</h1>
+    </div>
+          
+    
+    <div class = "csor">
+    </div>
+
+    <div class="dsd">
+                <div class= "parent">
+                    <textarea class=  "ipdp" id = "cnt1" placeholder="Note.." onfocus="this.value=''" ></textarea>
+                   <button class= "addText" onclick="addNt()">Add Note</button>
+                </div>
+        
+    </div>
+    
+    <div class="wrapper">
+    
+    </div>
+    
+    
+</body>
+</html>
+
+
