@@ -272,6 +272,7 @@ display: inline-block;
     position: absolute;
     top : 0;
     z-index: 10;
+  display : none;
 }
 
 .cPan{
