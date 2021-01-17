@@ -250,7 +250,7 @@ display: inline-block;
 
 @keyframes max1{
     from{height :0px; opacity : 0 }
-    to{height : 30%; opacity : 1}
+    to{height : 35%; opacity : 1}
 }
 
 .wrapper{
@@ -272,7 +272,7 @@ display: inline-block;
     position: absolute;
     top : 0;
     z-index: 10;
-  display : none;
+    display : none;
 }
 
 .cPan{
@@ -283,7 +283,16 @@ display: inline-block;
     margin-left: 8%;
     border-radius: 10px;
     padding : 2vh;
+    -webkit-animation-name : disc;
+    -webkit-animation-duration : 1;
     
+}
+
+@keyframes disc{
+    from{margin-top: -50vh}
+    to{
+        margin-top: 30vh;
+    }
 }
 .clrss{
     width : 14%;
@@ -338,7 +347,7 @@ display: inline-block;
     width : 22%;
     padding : 2vw;
         padding-bottom : 4vw;
-
+/*position: sticky*/
     height : 50%;
     margin-left: 2%;
     display:inline-block;
@@ -486,11 +495,27 @@ display: inline-block;
 }
 
 .ntext{
-    height : 76%;
+    height : 64%;
 /*    background: red;*/
     overflow: hidden;
         line-height: 24px;
 
+}
+
+.jij{
+    width : 60%;
+    padding : 1.5vh;
+    font-size: 4vw;
+    color : white;
+    background: black;
+    border : 0px;
+    border-radius: 10px;
+    
+}
+.dtext{
+    text-align: right;
+    color : #454545;
+    font-weight: 600;
 }
 
 .load{
@@ -516,8 +541,8 @@ display: inline-block;
   }
     
     .add{
-        width : 45px;
-                height : 45px;
+        width : 55px;
+                height : 55px;
 
     }
     .note{
@@ -563,7 +588,7 @@ display: inline-block;
     .note{
         transition  : .5s;
     }
-    .note:hover{
+    .note:s{
 /*    position: absolute;*/
     top : 0;
     width : 94%;
@@ -600,7 +625,7 @@ display: inline-block;
         font-size: 8vw;
         width: 100%;
         margin-left: -10VW;
-        margin-top: 10vh;
+        margin-top: 2vh;
     }
     
     .lef{
@@ -635,8 +660,9 @@ display: inline-block;
        margin-top: 80vh;
         border : 0px;
         position: fixed;
-        transform: rotate(180deg)
+        transform: rotate(180deg);
 /*        background: red;*/
+            font-size: 8vw;
     }
     
     
@@ -677,5 +703,44 @@ margin-left: 90vw;
     .hd{
     padding-top : 0%;
 }
+    .logo,.slid{
+        display : none;
+    }
+    .ntext{
+/*        height: fit-content;*/
+/*        background: red;*/
+/*        font-weight: 600;*/
+        font-size: 20px;
+    }
+    .note{
+/*        height : fit-content;*/
+/*        margin-top: -1vh;*/
+        position: static;
+    }
+    .lef{
+        height  :0px
+    }
+    .wrapper{
+        margin-left: 2vw;
+        height : 85vh;
+    }
+    
+    .pp{
+        position: absolute;
+        right : 0;
+        margin: 2vh;
+        margin-top: 4vh;
+        font-size: 4vw;
+        background: #3b3b3b;
+                padding : 2vw;
+        padding-left : 2vw;
+        padding-right : 2vw;
+border-radius: 5px;
+    }
+    
+    .pp:hover{
+        
+    }
+    
 }
 
