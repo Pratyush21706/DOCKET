@@ -3,7 +3,8 @@ var cl1 = "#ffc972";
 var cl2 = "#ff9b73";
 var cl3 = "#b692fe";
 var cl4 = "#01d4ff";
-var cl5 = "#e4ee90";  
+var cl5 = "#e4ee90"; 
+var mont;
 function setup(){
     sp = select(".sw")
     hp = select(".hd")
@@ -22,6 +23,7 @@ function setup(){
     input = select("#cnt1")
     load = select(".load")
     noNote = select(".nothing");
+    bmag = select(".catB");
     if(localStorage.skin ==1){
         dys();
     }else if(localStorage.skin ==2){
@@ -49,6 +51,44 @@ function setup(){
     
     
 console.log(firebase);
+    mont = month();
+    if(mont===1){
+        mont = "Jan"
+    }
+     if(mont===2){
+        mont = "Feb"
+    }
+      if(mont===3){
+        mont = "March"
+    }
+      if(mont===4){
+        mont = "April"
+    }
+          if(mont===5){
+        mont = "May"
+    }
+         if(mont===6){
+        mont = "June"
+    }
+         if(mont===7){
+        mont = "July"
+    }
+         if(mont===8){
+        mont = "August"
+    }
+         if(mont===9){
+        mont = "Sep"
+    }
+         if(mont===10){
+        mont = "Oct"
+    }
+         if(mont===11){
+        mont = "Nov"
+    }
+         if(mont===12){
+        mont = "Dec"
+    }
+    
 }
 
 function addNt(){
@@ -58,7 +98,8 @@ function addNt(){
      var data ={
           note : note,
          color : clr,
-         type : "hyde"
+         type : "hyde",
+         date : day()+" "+mont+" "+year()
      }
      
      database.ref(localStorage.uid).push(data,finished);
@@ -94,6 +135,7 @@ function gotData(data) {
 
   for (var i = 0; i < keys.length; i++) {
     var key = keys[i];
+     
     // Look at each fruit object!
      fruit = fruits[key];
       console.log(fruit.type)
@@ -108,23 +150,33 @@ function gotData(data) {
        }
       
       if(fruit.color==1){
-//            console.log(ra)
+
     aa=createButton("").addClass("note").parent(wrap).style("background",cl1)
-    createP(fruit.note).parent(aa).addClass("ntext")
+createP(fruit.note).parent(aa).addClass("ntext")
+ createP(fruit.date).parent(aa).addClass("dtext")
+
         aa.mousePressed(bigB)
         aa.id("jj")
+          
+
     }
       if(fruit.color==2){
-//            console.log(ra)
+                
+
     aa=createButton("").addClass("note").parent(wrap).style("background",cl2)
-    createP(fruit.note).parent(aa).addClass("ntext")
+    createP(fruit.note).parent(aa).addClass("ntext");
+           createP(fruit.date).parent(aa).addClass("dtext")
+
           aa.mousePressed(bigB)
           aa.id("jj")
     }
       if(fruit.color==3){
-//            console.log(ra)
-    aa=createButton("").addClass("note").parent(wrap).style("background",cl3)
+    aa=createButton("");
+       aa.addClass("note").parent(wrap).style("background",cl3)
+          
     createP(fruit.note).parent(aa).addClass("ntext")
+     createP(fruit.date).parent(aa).addClass("dtext")
+
           aa.mousePressed(bigB)
           aa.id("jj")
     }
@@ -132,13 +184,18 @@ function gotData(data) {
 //            console.log(ra)
     aa=createButton("").addClass("note").parent(wrap).style("background",cl4)
     createP(fruit.note).parent(aa).addClass("ntext")
+     createP(fruit.date).parent(aa).addClass("dtext")
+
           aa.mousePressed(bigB)
           aa.id("jj")
     }
       if(fruit.color==5){
 //            console.log(ra)
     aa=createButton("").addClass("note").parent(wrap).style("background",cl5)
+    
     createP(fruit.note).parent(aa).addClass("ntext")
+           createP(fruit.date).parent(aa).addClass("dtext")
+
           aa.mousePressed(bigB)
           aa.id("jj")
     }
@@ -185,13 +242,13 @@ function night(){
     db.style("background","orange")
     nb.style("display","none");
     db.style("display","block")
-    bdy.style("background","black");
+    bdy.style("background","#252525");
     sds.style("color","white")
     logo.style("color","white")
-    sp.style("background","white");
-    sp.style("color","black");
-    hp.style("background","white");
-    hp.style("color","black");
+//    sp.style("background","white");
+//    sp.style("color","black");
+//    hp.style("background","black");
+//    hp.style("color","black");
     d1.style("border-bottom","2px solid #252525");
         d1.style("border-right","2px solid #252525");
 
@@ -267,5 +324,233 @@ function hid(){
 }
 
 function sendTo(){
-    window.location.href ="./cat.html"
+    bmag.style("display","block")
+}
+function gotData1(data) {
+    load.style("display","none")
+    console.log("dlj")
+    var listings = selectAll(".note");
+    for(var i =0; i<listings.length; i++){
+        listings[i].remove();
+    }
+  var fruits = data.val();
+  // Grab the keys to iterate over the object
+  var keys = Object.keys(fruits);
+
+  for (var i = 0; i < keys.length; i++) {
+    var key = keys[i];
+    // Look at each fruit object!
+     fruit = fruits[key];
+      console.log(fruit.type)
+      
+       if(fruit.type=="basic"){
+       noNote.style("display","block");
+           console.log(fruit.type)
+       }
+       if(fruit.type=="hyde"){
+       noNote.style("display","none");
+           console.log(fruit.type)
+       }
+      
+      if(fruit.color==1){
+//            console.log(ra)
+    aa=createButton("").addClass("note").parent(wrap).style("background",cl1)
+    createP(fruit.note).parent(aa).addClass("ntext")
+        aa.mousePressed(bigB)
+        aa.id("jj")
+    }
+    
+  }
+}
+function gotData2(data) {
+    load.style("display","none")
+    console.log("dlj")
+    var listings = selectAll(".note");
+    for(var i =0; i<listings.length; i++){
+        listings[i].remove();
+    }
+  var fruits = data.val();
+  // Grab the keys to iterate over the object
+  var keys = Object.keys(fruits);
+
+  for (var i = 0; i < keys.length; i++) {
+    var key = keys[i];
+    // Look at each fruit object!
+     fruit = fruits[key];
+      console.log(fruit.type)
+      
+       if(fruit.type=="basic"){
+       noNote.style("display","block");
+           console.log(fruit.type)
+       }
+       if(fruit.type=="hyde"){
+       noNote.style("display","none");
+           console.log(fruit.type)
+       }
+      
+
+      if(fruit.color==2){
+//            console.log(ra)
+    aa=createButton("").addClass("note").parent(wrap).style("background",cl2)
+    createP(fruit.note).parent(aa).addClass("ntext")
+          aa.mousePressed(bigB)
+          aa.id("jj")
+    }
+
+
+
+     
+  }
+}
+function gotData3(data) {
+    load.style("display","none")
+    console.log("dlj")
+    var listings = selectAll(".note");
+    for(var i =0; i<listings.length; i++){
+        listings[i].remove();
+    }
+  var fruits = data.val();
+  // Grab the keys to iterate over the object
+  var keys = Object.keys(fruits);
+
+  for (var i = 0; i < keys.length; i++) {
+    var key = keys[i];
+    // Look at each fruit object!
+     fruit = fruits[key];
+      console.log(fruit.type)
+      
+       if(fruit.type=="basic"){
+       noNote.style("display","block");
+           console.log(fruit.type)
+       }
+       if(fruit.type=="hyde"){
+       noNote.style("display","none");
+           console.log(fruit.type)
+       }
+
+      if(fruit.color==3){
+//            console.log(ra)
+    aa=createButton("").addClass("note").parent(wrap).style("background",cl3)
+    createP(fruit.note).parent(aa).addClass("ntext")
+          aa.mousePressed(bigB)
+          aa.id("jj")
+    }
+      
+
+
+     
+  }
+}
+function gotData4(data) {
+    load.style("display","none")
+    console.log("dlj")
+    var listings = selectAll(".note");
+    for(var i =0; i<listings.length; i++){
+        listings[i].remove();
+    }
+  var fruits = data.val();
+  // Grab the keys to iterate over the object
+  var keys = Object.keys(fruits);
+
+  for (var i = 0; i < keys.length; i++) {
+    var key = keys[i];
+    // Look at each fruit object!
+     fruit = fruits[key];
+      console.log(fruit.type)
+      
+       if(fruit.type=="basic"){
+       noNote.style("display","block");
+           console.log(fruit.type)
+       }
+       if(fruit.type=="hyde"){
+       noNote.style("display","none");
+           console.log(fruit.type)
+       }
+      if(fruit.color==4){
+//            console.log(ra)
+    aa=createButton("").addClass("note").parent(wrap).style("background",cl4)
+    createP(fruit.note).parent(aa).addClass("ntext")
+          aa.mousePressed(bigB)
+          aa.id("jj")
+    } 
+  }
+}
+function gotData5(data) {
+    load.style("display","none")
+    console.log("dlj")
+    var listings = selectAll(".note");
+    for(var i =0; i<listings.length; i++){
+        listings[i].remove();
+    }
+  var fruits = data.val();
+  // Grab the keys to iterate over the object
+  var keys = Object.keys(fruits);
+
+  for (var i = 0; i < keys.length; i++) {
+    var key = keys[i];
+    // Look at each fruit object!
+     fruit = fruits[key];
+      console.log(fruit.type)
+      
+       if(fruit.type=="basic"){
+       noNote.style("display","block");
+           console.log(fruit.type)
+       }
+       if(fruit.type=="hyde"){
+       noNote.style("display","none");
+           console.log(fruit.type)
+       }
+      if(fruit.color==5){
+//            console.log(ra)
+    aa=createButton("").addClass("note").parent(wrap).style("background",cl5)
+    createP(fruit.note).parent(aa).addClass("ntext")
+          aa.mousePressed(bigB)
+          aa.id("jj")
+    }
+
+
+     
+  }
+}
+
+
+function filter1(){
+        bmag.style("display","none")
+
+    console.log("I Filter 1");
+   var ref = database.ref(localStorage.uid);
+    ref.on("value", gotData1, errData);
+}
+function filter2(){
+        bmag.style("display","none")
+
+    console.log("I Filter 2");
+   var ref = database.ref(localStorage.uid);
+    ref.on("value", gotData2, errData);
+}
+function filter3(){
+        bmag.style("display","none")
+
+    console.log("I Filter 3");
+   var ref = database.ref(localStorage.uid);
+    ref.on("value", gotData3, errData);
+}
+function filter4(){
+        bmag.style("display","none")
+
+    console.log("I Filter 4");
+   var ref = database.ref(localStorage.uid);
+    ref.on("value", gotData4, errData);
+}
+function filter5(){
+        bmag.style("display","none")
+
+    console.log("I Filter 5");
+   var ref = database.ref(localStorage.uid);
+    ref.on("value", gotData5, errData);
+}
+
+function bigB(){
+    console.log("sjj")
+    aa.style("width","95%")
 }
