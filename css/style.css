@@ -3,16 +3,22 @@ html, body {
   padding: 0px;
     font-family: sans-serif;
     outline: none;
-    overflow: hidden;
-    cursor:url(fd.cur), default;	
+    overflow-x: hidden;
+    cursor:url(normal.png), default;	
 /*    background: ;*/
 /*    color : white;*/
 }
-body:-webkit-scrollbar{
-    display : none;
+body::-webkit-scrollbar{
+    display : nonse;
 }
+
+button{
+        cursor:url(btn.png), default;	
+
+}
+
 .lef{
-    position: absolute;
+    position: fixed;
     left  :0;
     border-right: 2px solid #e7e9ed;
     height : 100vh;
@@ -50,6 +56,8 @@ body:-webkit-scrollbar{
 
 }
 
+
+
 .pp1{
     margin-top: -5px;
     font-size: 18px;
@@ -69,7 +77,7 @@ outline: none;
 .slid{
    background: #e7e9ed;
     width : 4vw;
-    position: absolute;
+    position: fixed;
     border-radius: 20px;
     height : 3vh;
     display: inline-block;
@@ -92,15 +100,33 @@ outline: none;
     display: none;
 }
 .pp:hover{
-color : black;
-    border-bottom : 2px solid black;    
+/*background : (black;*/
+/*    border : 2px solid black;    */
+    opacity: .5;
     border-radius: 0px;
+    background: red;
+    outline : none;
 }
 
 #nam{
-    margin-top: 7   vh;
+    margin-top: -2vh;
     padding : 1vh;
+    padding-top : 8vh;
     font-size: 3vw;
+    position: fixed;
+    background: white;
+    width : 100%;
+    text-align: left;
+    padding-top : 15vh;
+    top : 0;
+    transition: .2s ease-in-out;
+/*    margin-top: 0px;*/
+}
+
+.pp{
+    position: fixed;
+    margin-top: 2vh;
+    z-index: 500;
 }
 
 
@@ -256,9 +282,9 @@ display: inline-block;
 .wrapper{
 /*    background: red;*/
     width : 90vw;
-    height : 70vh;
+/*    height : 70vh;*/
     margin-left: 10.2vw;
-    overflow: scroll;
+/*    overflow: scroll;*/
 /*    display: table-cell;*/
   vertical-align: bottom;
 }
@@ -345,10 +371,10 @@ display: inline-block;
 }   
 .note{
     width : 22%;
-    padding : 2vw;
-        padding-bottom : 4vw;
+    padding : 1vw;
+/*        padding-bottom : 4vw;*/
 /*position: sticky*/
-    height : 50%;
+/*    height : 50%;*/
     margin-left: 2%;
     display:inline-block;
     border-radius: 2vw;
@@ -365,6 +391,10 @@ display: inline-block;
    word-wrap: break-word;
 /*    overflow: */
     outline:none;
+    height : 0%;
+    transition: .5s bounce;
+        cursor:url(normal.png), default;	
+
 }
 .note:hover{
 /*    position: absolute;*/
@@ -478,6 +508,28 @@ display: inline-block;
     margin-left: -1vw;
 
 }
+.thanks{
+    position: absolute;
+/*    background: red;*/
+    height : 32vh;
+    width : 18%;
+    margin-top: -32vh;
+    margin-left: 0%;
+    color : transparent;
+        cursor:url(normalW.png), default;	
+
+/*    background: transparent;*/
+}
+
+.wrapper{
+    margin-top: 20vh;
+}
+
+
+
+.load{
+/*    display: none;*/
+}
 .addText{
     font-size: 20px;
     width : 20%;
@@ -494,13 +546,7 @@ display: inline-block;
     color : black;
 }
 
-.ntext{
-    height : 64%;
-/*    background: red;*/
-    overflow: hidden;
-        line-height: 24px;
 
-}
 
 .jij{
     width : 60%;
@@ -513,9 +559,29 @@ display: inline-block;
     
 }
 .dtext{
-    text-align: right;
+/*    text-align: right;*/
+    width : fit-content;
     color : #454545;
-    font-weight: 600;
+    margin-left: 2vw;
+/*    font-weight: 600;*/
+/*    background: blue;*/
+}
+
+.editB{
+    display: inline-block;
+    margin-top: -9vh;
+    margin-left: 35%;
+    padding : 2vw;
+    padding-left : 2vw;
+    padding-right : 2vw;
+    position: absolute;
+    font-size: 20px;
+    background: black;
+    border-radius: 90px;
+    border : 0px;
+    z-index: 15;
+    color  : white;
+
 }
 
 .load{
@@ -527,13 +593,81 @@ display: inline-block;
 /*    display: none;*/
     z-index: 50;
 }
-
+  .bapuji{
+        position: absolute;
+        top : 0;
+        left : 0;
+        width : 100vw;
+        height : 100vh;
+        background: rgba(0,0,0,0.5)
+    }
 .pre{
         margin-top: 10vw;
 
     width : .10%;
 }
+ #conta{
+        color : black;
+                font-size: 25px;
+        margin-top: -4vh;
+        height : 70%;
+        overflow: scroll;
+/*     background: red;*/
+    }
+    
+    #conta::-webkit-scrollbar{
+        display: none;
+    }
+#tits{
+    margin-top: -2vh;
+}
 
+.pata{
+    font-size: 30px;
+/*    color : black;*/
+    background: white;
+    border : none;
+    margin-left: 80%;
+}
+.bapuji{
+    z-index: 100;
+    display: none;
+}
+@media screen and (min-width : 749px){
+.ntext{
+    padding-bottom: 4vh;
+/*    background: red;*/
+    overflow: hidden;
+    line-height: 24px;  
+    max-height : 18vh;
+    min-height : 18vh;
+
+}
+    
+   #tits{
+        font-size: 40px;
+    }
+      
+    .fpc{
+        width : 30%;
+        background: royalblue;
+        color : white;
+        position: absolute;
+        top : 0;
+        z-index: 15;
+        padding-left: 5vw;
+        padding-right: 5vw;
+    margin-left: 35vw;
+        height : 60.6vh;
+        border-radius: 20px;
+        margin-top: 18vh;
+        -webkit-animation-name : oneU;
+        -webkit-animation-duration : .8s;
+        display: none;
+    } 
+    
+  
+}
 @media screen and (max-width : 420px){
  .pp{
  margin-left: 15vw;
@@ -547,7 +681,7 @@ display: inline-block;
     }
     .note{
         width : 42%;
-        height: 150vw;
+        height: 15vw;
         font-size: 15px;
         padding : 2%;
     }
@@ -588,6 +722,13 @@ display: inline-block;
     .note{
         transition  : .5s;
     }
+    .ntext{
+        height : 20vh;
+        width  : 90%;
+/*        background: red;*/
+        margin-left: 5%;
+        overflow: hidden;
+    }
     .note:s{
 /*    position: absolute;*/
     top : 0;
@@ -610,7 +751,7 @@ display: inline-block;
         margin-left: 0vw;
         WIDTH : 100VW;
         margin-top: -3vh;
-        height : 80vh;
+/*        height : 80vh;*/
         overflow: scroll;
     }
     .nothing{
@@ -629,7 +770,7 @@ display: inline-block;
     }
     
     .lef{
-/*        position: fixed;*/
+        position: fixed;
         top : 0;
         width : 100%;
         height : 8vh;
@@ -645,25 +786,10 @@ display: inline-block;
         margin-left: -85vw;
         margin-top: 3vh;
     }
-    
+ 
 
     
-    .add{
-/*        width : 8vw;*/
-/*        height : 6vh;*/
-        font-size: 22px;
-        position: absolute;
-/*        margin-top: 60vh;*/
-        z-index: 2;
-        right : 0;
-        margin: 6vh;
-       margin-top: 80vh;
-        border : 0px;
-        position: fixed;
-        transform: rotate(180deg);
-/*        background: red;*/
-            font-size: 8vw;
-    }
+    
     
     
     .pp{
@@ -673,6 +799,14 @@ display: inline-block;
         top : 0;
 /*        margin-left: 5vw;*/
     }
+      .lef, #nam{
+        
+        z-index: 4;
+        position: absolute;
+       
+/*        margin-left: 5vw;*/
+    }
+    
     .pallet{
         height: 0vh;
 /*        z-index: 5;*/
@@ -680,7 +814,8 @@ display: inline-block;
       margin-top: 60vh;
         padding-left : 2vw;
                 padding-right : 2vw;
-
+        z-index: 50;
+/*        cursor: none;*/
 /*        padding-bottom : 8vh;*/
         background: rgba(0,0,0,0.8);
         width : fit-content;
@@ -692,7 +827,7 @@ display: inline-block;
     }
     
     .slid{
-       position: absolute;
+       position: fixed;
         top : 0;
         margin: 2vh;
         margin-right: 6vh;
@@ -710,7 +845,7 @@ margin-left: 90vw;
 /*        height: fit-content;*/
 /*        background: red;*/
 /*        font-weight: 600;*/
-        font-size: 20px;
+        font-size: 18px;
     }
     .note{
 /*        height : fit-content;*/
@@ -722,7 +857,8 @@ margin-left: 90vw;
     }
     .wrapper{
         margin-left: 2vw;
-        height : 85vh;
+/*        height : 985vh;*/
+/*        background: black;*/
     }
     
     .pp{
@@ -742,5 +878,177 @@ border-radius: 5px;
         
     }
     
+    .thanks{
+    position: absolute;;
+    background: transparent;
+/*            background: red;*/
+/*opacity: .05;*/
+    height : 28vh;
+    width : 42%;
+            margin-top: -31vh;
+/*flex: initial;*/
+/*        z-index: 1;*/
+/*        top : 0;*/
+/*    background: transparent;*/
 }
+    
+    .note{
+/*        position: absolute;*/
+    }
+    
+    .parent{
+        position: absolute;
+        margin-top: 2vh;
+        margin-left: 3%;
+        width : 90%;
+        height : 90%; 
+        border-radius: 0px
+    }
+    
+    .jhajha{
+        width : 100%;
+        font-size: 30px;
+        border : 0px;
+        margin-left: -5px;
+        outline : 0px;
+        background : transparent;
+        transition: 1.5s;
+        font-weight: 700;
+    }
+    .jhajha:focus{
+                border-bottom: 1px solid gray;
+
+    }
+    .jhajha::placeholder{
+/*        color : black;*/
+        font-weight: lighter;
+    }
+    
+    .ipdp{
+        margin-top: 1vh;
+        width : 100%;
+        background : transparent;
+        height : 80vh;
+       
+    }
+    .addText{
+        margin-left: 60vw;
+/*        position: fixed;*/
+        position: sticky;
+            min-height: 50px;
+        padding: 0px;
+        padding-left: 1vw;
+        padding-right: 1vw;
+        
+    }
+    .ipdp::-webkit-scrollbar{
+        display : none;
+    }
+    .ipdp::placeholder{
+        color : gray;
+    }
+    #nam{
+/*    margin-top: 7   vh;*/
+    padding : 1vh;
+    font-size: 8vw;
+    position: fixed;
+    background: white;
+    width : 100%;
+    text-align: left;
+    padding-top : 2vh;
+    top : 0;
+    margin-top: 0px;
+}
+    
+    .wrapper{
+        margin-top: 11vh;
+    }
+    
+    .pp{
+        position: fixed;
+        margin-top: 2vh;
+    }
+    .add{
+/*        width : 8vw;*/
+/*        height : 6vh;*/
+        font-size: 22px;
+        position: fixed;
+/*        margin-top: 60vh;*/
+        z-index: 5;
+        right : 0;
+        margin: 2vw;
+/*       margin-top: 80vh;*/
+        border : 0px;
+        bottom : 0;
+        position: fixed;
+        transform: rotate(180deg);
+/*        background: red;*/
+            font-size: 8vw;
+    }
+    
+    .pp:hover >::after{
+        content : "   Filter";
+/*        background: black;*/
+/*        height : */
+    
+    }
+    
+    .fpc{
+        width : 60%;
+        height : 55vh;
+        background: royalblue;
+        color : white;
+        position: absolute;
+        top : 0;
+        margin-top: 22.5vh;
+        z-index: 101;
+        padding-left: 5vw;
+        padding-right: 5vw;
+        border-radius: 20px;
+        margin-left: 15%;;
+        -webkit-animation-name : oneU;
+        -webkit-animation-duration : .8s;
+        display: none;
+    }  
+    
+    #conta{
+        color : black;
+                font-size: 25px;
+        margin-top: -4vh;
+        height : 70%;
+        overflow: scroll;
+    }
+    
+    #tits{
+        font-size: 40px;
+        font-weight: 700;
+    }
+    
+    .thanks:hover{
+        background: blue
+    }
+    .thanks:hover{
+        background: red;
+    }
+}
+
+
+@keyframes oneU{
+    from{
+        opacity: 0;
+        width : 0px;
+        height : 0vh;
+        margin-top : 0vh;
+        margin-left : 0vw
+    }
+    to{
+        opacity: 1;
+        width : 60vw;
+        height : 50vh;
+        margin : 22.5vh;
+        margin-left : 15%;
+    }
+}
+
+
 
