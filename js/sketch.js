@@ -6,6 +6,7 @@ var cl4 = "#01d4ff";
 var cl5 = "#e4ee90"; 
 var mont;
 function setup(){
+    dvA = select("#fpcon")
     sp = select(".sw")
     hp = select(".hd")
     pallet = select(".pallet");  
@@ -21,9 +22,12 @@ function setup(){
     curs = select(".csor");
     inDiv = select(".dsd")
     input = select("#cnt1")
+        input1 = select(".jhajha")
+    pp =select(".pp")
     load = select(".load")
     noNote = select(".nothing");
     bmag = select(".catB");
+    baap = select(".parent")
     if(localStorage.skin ==1){
         dys();
     }else if(localStorage.skin ==2){
@@ -138,67 +142,76 @@ function gotData(data) {
      
     // Look at each fruit object!
      fruit = fruits[key];
-      console.log(fruit.type)
+//      console.log(fruit.type)
       
        if(fruit.type=="basic"){
        noNote.style("display","block");
-           console.log(fruit.type)
+//           console.log(fruit.type)
        }
        if(fruit.type=="hyde"){
        noNote.style("display","none");
-           console.log(fruit.type)
+//           console.log(fruit.type)
        }
       
       if(fruit.color==1){
 
     aa=createButton("").addClass("note").parent(wrap).style("background",cl1)
+       
 createP(fruit.note).parent(aa).addClass("ntext")
  createP(fruit.date).parent(aa).addClass("dtext")
-
-        aa.mousePressed(bigB)
+ jij = createA("#",key).parent(aa).addClass("thanks")
+        jij.mousePressed(obig);
         aa.id("jj")
           
 
     }
-      if(fruit.color==2){
-                
-
-    aa=createButton("").addClass("note").parent(wrap).style("background",cl2)
-    createP(fruit.note).parent(aa).addClass("ntext");
-           createP(fruit.date).parent(aa).addClass("dtext")
-
-          aa.mousePressed(bigB)
-          aa.id("jj")
-    }
-      if(fruit.color==3){
-    aa=createButton("");
-       aa.addClass("note").parent(wrap).style("background",cl3)
+      
+            if(fruit.color==2){
+ aa=createButton("").addClass("note").parent(wrap).style("background",cl2)    
+createP(fruit.note).parent(aa).addClass("ntext")
+ createP(fruit.date).parent(aa).addClass("dtext");
+//createButton("").parent(aa).addClass("fas fa-pencil-alt editB");
+ jij = createA("#",key).parent(aa).addClass("thanks")
+        jij.mousePressed(obig);
+        aa.id("jj")
           
-    createP(fruit.note).parent(aa).addClass("ntext")
-     createP(fruit.date).parent(aa).addClass("dtext")
 
-          aa.mousePressed(bigB)
-          aa.id("jj")
     }
-      if(fruit.color==4){
-//            console.log(ra)
-    aa=createButton("").addClass("note").parent(wrap).style("background",cl4)
-    createP(fruit.note).parent(aa).addClass("ntext")
-     createP(fruit.date).parent(aa).addClass("dtext")
+            if(fruit.color==3){
 
-          aa.mousePressed(bigB)
-          aa.id("jj")
-    }
-      if(fruit.color==5){
-//            console.log(ra)
-    aa=createButton("").addClass("note").parent(wrap).style("background",cl5)
-    
-    createP(fruit.note).parent(aa).addClass("ntext")
-           createP(fruit.date).parent(aa).addClass("dtext")
+    aa=createButton("").addClass("note").parent(wrap).style("background",cl3)
+       
+createP(fruit.note).parent(aa).addClass("ntext")
+ createP(fruit.date).parent(aa).addClass("dtext")
+ jij = createA("#",key).parent(aa).addClass("thanks")
+        jij.mousePressed(obig);
+        aa.id("jj")
+          
 
-          aa.mousePressed(bigB)
-          aa.id("jj")
     }
+      
+            if(fruit.color==4){
+ aa=createButton("").addClass("note").parent(wrap).style("background",cl4)
+       
+createP(fruit.note).parent(aa).addClass("ntext")
+ createP(fruit.date).parent(aa).addClass("dtext")
+ jij = createA("#",key).parent(aa).addClass("thanks")
+        jij.mousePressed(obig);
+        aa.id("jj")
+          
+    }
+      
+            if(fruit.color==5){
+ aa=createButton("").addClass("note").parent(wrap).style("background",cl5)
+createP(fruit.note).parent(aa).addClass("ntext")
+ createP(fruit.date).parent(aa).addClass("dtext")
+ jij = createA("#",key).parent(aa).addClass("thanks")
+        jij.mousePressed(obig);
+        aa.id("jj")
+          
+
+    }
+
 
 
      
@@ -244,17 +257,21 @@ function night(){
     db.style("display","block")
     bdy.style("background","#252525");
     sds.style("color","white")
+    sds.style("background","#252525");
     logo.style("color","white")
 //    sp.style("background","white");
 //    sp.style("color","black");
 //    hp.style("background","black");
 //    hp.style("color","black");
-    d1.style("border-bottom","2px solid #252525");
-        d1.style("border-right","2px solid #252525");
-
+    d1.style("border-bottom","2px solid #000000");
+        d1.style("border-right","2px solid #000000");
+baap.style("background","#252525");
+    input.style("color","#f7f7f7")
+    input1.style("color","white")
+    pp.style("background","#3b3b3b")
 //        d1.style("background","#151515  ")
     b1.style("color","#f7f7f7")
-    d1.style("background","black  ")
+    d1.style("background","#252525  ")
         noNote.style("color","#f7f7f7");
     noNote.style("background","#151515");
             noNote.style("box-shadow","box-shadow: 0px 0px 10px 0px red")
@@ -268,7 +285,8 @@ function dys(){
        bdy.style("background","white")
     nb.style("display","block");
     db.style("display","none");
-    sds.style("color","black")
+    sds.style("color","black");
+    sds.style("background","white")
     logo.style("color","black")
     sp.style("background","black");
     sp.style("color","white");
@@ -277,14 +295,19 @@ function dys(){
             d1.style("background","white  ")
     d1.style("border-bottom","2px solid #e7e9ed");
         d1.style("border-right","2px solid #e7e9ed");
-
+    pp.style("background","#efefef")
     b1.style("color","gray")
     noNote.style("color","black")
      noNote.style("color","#858585");
     noNote.style("background","white");
+    baap.style("background","#f7f7f7");
+    inDiv.style("background","#f7f7f7");
+    input.style("color","#151515")
+    input1.style("color","black")
   localStorage.skin = 1
 
 }
+
 
 function addNote(cl){
    
@@ -309,7 +332,15 @@ function addNote(cl){
         clr = 5
     }
     console.log(clr);
+    if(window.innerWidth > 748){
     inDiv.style("background",ca);
+    }else{
+        if(localStorage.skin ==1){
+        inDiv.style("background","#f7f7f7");
+    }else if(localStorage.skin ==2){
+       inDiv.style("background","#252525");
+    } 
+    }
     inDiv.style("display","block");
     hidePallet()
 }
@@ -352,12 +383,15 @@ function gotData1(data) {
            console.log(fruit.type)
        }
       
-      if(fruit.color==1){
-//            console.log(ra)
-    aa=createButton("").addClass("note").parent(wrap).style("background",cl1)
-    createP(fruit.note).parent(aa).addClass("ntext")
-        aa.mousePressed(bigB)
+        if(fruit.color==1){
+ aa=createButton("").addClass("note").parent(wrap).style("background",cl1)    
+createP(fruit.note).parent(aa).addClass("ntext")
+ createP(fruit.date).parent(aa).addClass("dtext")
+ jij = createA("#",key).parent(aa).addClass("thanks")
+        jij.mousePressed(obig);
         aa.id("jj")
+          
+
     }
     
   }
@@ -389,12 +423,15 @@ function gotData2(data) {
        }
       
 
-      if(fruit.color==2){
-//            console.log(ra)
-    aa=createButton("").addClass("note").parent(wrap).style("background",cl2)
-    createP(fruit.note).parent(aa).addClass("ntext")
-          aa.mousePressed(bigB)
-          aa.id("jj")
+         if(fruit.color==2){
+ aa=createButton("").addClass("note").parent(wrap).style("background",cl2)    
+createP(fruit.note).parent(aa).addClass("ntext")
+ createP(fruit.date).parent(aa).addClass("dtext")
+ jij = createA("#",key).parent(aa).addClass("thanks")
+        jij.mousePressed(obig);
+        aa.id("jj")
+          
+
     }
 
 
@@ -428,12 +465,15 @@ function gotData3(data) {
            console.log(fruit.type)
        }
 
-      if(fruit.color==3){
-//            console.log(ra)
-    aa=createButton("").addClass("note").parent(wrap).style("background",cl3)
-    createP(fruit.note).parent(aa).addClass("ntext")
-          aa.mousePressed(bigB)
-          aa.id("jj")
+        if(fruit.color==3){
+ aa=createButton("").addClass("note").parent(wrap).style("background",cl3)    
+createP(fruit.note).parent(aa).addClass("ntext")
+ createP(fruit.date).parent(aa).addClass("dtext")
+ jij = createA("#",key).parent(aa).addClass("thanks")
+        jij.mousePressed(obig);
+        aa.id("jj")
+          
+
     }
       
 
@@ -466,13 +506,16 @@ function gotData4(data) {
        noNote.style("display","none");
            console.log(fruit.type)
        }
-      if(fruit.color==4){
-//            console.log(ra)
-    aa=createButton("").addClass("note").parent(wrap).style("background",cl4)
-    createP(fruit.note).parent(aa).addClass("ntext")
-          aa.mousePressed(bigB)
-          aa.id("jj")
-    } 
+         if(fruit.color==4){
+ aa=createButton("").addClass("note").parent(wrap).style("background",cl4)    
+createP(fruit.note).parent(aa).addClass("ntext")
+ createP(fruit.date).parent(aa).addClass("dtext")
+ jij = createA("#",key).parent(aa).addClass("thanks")
+        jij.mousePressed(obig);
+        aa.id("jj")
+          
+
+    }
   }
 }
 function gotData5(data) {
@@ -500,12 +543,14 @@ function gotData5(data) {
        noNote.style("display","none");
            console.log(fruit.type)
        }
-      if(fruit.color==5){
-//            console.log(ra)
-    aa=createButton("").addClass("note").parent(wrap).style("background",cl5)
-    createP(fruit.note).parent(aa).addClass("ntext")
-          aa.mousePressed(bigB)
-          aa.id("jj")
+         if(fruit.color==2){
+ aa=createButton("").addClass("note").parent(wrap).style("background",cl2)    
+createP(fruit.note).parent(aa).addClass("ntext")
+ createP(fruit.date).parent(aa).addClass("dtext")
+ jij = createA("#",key).parent(aa).addClass("thanks")
+        jij.mousePressed(obig);
+        aa.id("jj")  
+
     }
 
 
@@ -550,7 +595,40 @@ function filter5(){
     ref.on("value", gotData5, errData);
 }
 
-function bigB(){
-    console.log("sjj")
-    aa.style("width","95%")
+
+function obig(){
+    console.log(this.html());
+    nm = localStorage.uid+"/"+this.html()
+    console.log(nm)
+    var ref = database.ref(nm);
+    ref.on("value", showNote, errData);
+    
+    function showNote(data){
+        var fnt = data.val();
+        console.log(fnt)
+               document.getElementById("sklh").style = "display : block";
+ document.getElementById("fpcon").style = "display : block";
+        
+       if(fnt.color ==1){
+           dvA.style("background",cl1)
+       } 
+         if(fnt.color ==2){
+           dvA.style("background",cl2)
+       } 
+         if(fnt.color ==3){
+           dvA.style("background",cl3)
+       } 
+         if(fnt.color ==4){
+           dvA.style("background",cl4)
+       } 
+         if(fnt.color ==5){
+           dvA.style("background",cl5)
+       } document.getElementById("conta").innerHTML = fnt.note;
+    }
 }
+
+function hideFull(){
+ document.getElementById("sklh").style = "display : none";
+ document.getElementById("fpcon").style = "display : none";
+}
+
