@@ -3,9 +3,13 @@ var cl1 = "#ffc972";
 var cl2 = "#ff9b73";
 var cl3 = "#b692fe";
 var cl4 = "#01d4ff";
-var cl5 = "#e4ee90"; 
+var cl5 = "#e4ee90";
+var nm;
 var mont;
+var key;
 function setup(){
+        document.body.style.zoom = "98%";
+    rape = select(".rape")
     dvA = select("#fpcon")
     sp = select(".sw")
     hp = select(".hd")
@@ -17,12 +21,13 @@ function setup(){
     sds = select("#nam");
     logo = select(".logo")
     d1 = select(".lef")
-    b1 = select(".pp")
+//    b1 = select(".pp")
     bgf = select(".bfg");
     curs = select(".csor");
     inDiv = select(".dsd")
     input = select("#cnt1")
-        input1 = select(".jhajha")
+    
+        input1 = select("#cnt0")
     pp =select(".pp")
     load = select(".load")
     noNote = select(".nothing");
@@ -99,11 +104,14 @@ function addNt(){
 //    console.log("bruhh")
     inDiv.style("display","none")
     note = input.value();
+    title = input1.value();
      var data ={
           note : note,
          color : clr,
          type : "hyde",
-         date : day()+" "+mont+" "+year()
+         date : day()+" "+mont+" "+year(),
+         delete : "no",
+         title : title
      }
      
      database.ref(localStorage.uid).push(data,finished);
@@ -128,7 +136,7 @@ function errData(error) {
 
 function gotData(data) {
     load.style("display","none")
-    console.log("dlj")
+    console.log(data)
     var listings = selectAll(".note");
     for(var i =0; i<listings.length; i++){
         listings[i].remove();
@@ -157,66 +165,185 @@ function gotData(data) {
 
     aa=createButton("").addClass("note").parent(wrap).style("background",cl1)
        
-createP(fruit.note).parent(aa).addClass("ntext")
+createP(fruit.title).parent(aa).addClass("ntext")
  createP(fruit.date).parent(aa).addClass("dtext")
  jij = createA("#",key).parent(aa).addClass("thanks")
         jij.mousePressed(obig);
         aa.id("jj")
-          
+       if(fruit.delete=="yes"){
+          aa.style("display","none")
+      }   
 
     }
       
             if(fruit.color==2){
  aa=createButton("").addClass("note").parent(wrap).style("background",cl2)    
-createP(fruit.note).parent(aa).addClass("ntext")
+createP(fruit.title).parent(aa).addClass("ntext")
  createP(fruit.date).parent(aa).addClass("dtext");
 //createButton("").parent(aa).addClass("fas fa-pencil-alt editB");
  jij = createA("#",key).parent(aa).addClass("thanks")
         jij.mousePressed(obig);
         aa.id("jj")
-          
+       if(fruit.delete=="yes"){
+          aa.style("display","none")
+      }   
 
     }
             if(fruit.color==3){
 
     aa=createButton("").addClass("note").parent(wrap).style("background",cl3)
        
-createP(fruit.note).parent(aa).addClass("ntext")
+createP(fruit.title).parent(aa).addClass("ntext")
  createP(fruit.date).parent(aa).addClass("dtext")
  jij = createA("#",key).parent(aa).addClass("thanks")
         jij.mousePressed(obig);
         aa.id("jj")
-          
+       if(fruit.delete=="yes"){
+          aa.style("display","none")
+      }   
 
     }
       
             if(fruit.color==4){
  aa=createButton("").addClass("note").parent(wrap).style("background",cl4)
        
-createP(fruit.note).parent(aa).addClass("ntext")
+createP(fruit.title).parent(aa).addClass("ntext")
  createP(fruit.date).parent(aa).addClass("dtext")
  jij = createA("#",key).parent(aa).addClass("thanks")
         jij.mousePressed(obig);
         aa.id("jj")
-          
+        if(fruit.delete=="yes"){
+          aa.style("display","none")
+      }  
     }
       
             if(fruit.color==5){
  aa=createButton("").addClass("note").parent(wrap).style("background",cl5)
-createP(fruit.note).parent(aa).addClass("ntext")
+createP(fruit.title).parent(aa).addClass("ntext")
  createP(fruit.date).parent(aa).addClass("dtext")
  jij = createA("#",key).parent(aa).addClass("thanks")
         jij.mousePressed(obig);
         aa.id("jj")
-          
+       if(fruit.delete=="yes"){
+          aa.style("display","none");
+           console.log(fruit.delete)
+      }   
 
     }
+      
+      
 
 
 
      
   }
 }
+
+function gotPata(data) {
+    load.style("display","none")
+    console.log("dlj")
+    var listings = selectAll(".note");
+    for(var i =0; i<listings.length; i++){
+        listings[i].remove();
+    }
+  var fruits = data.val();
+  // Grab the keys to iterate over the object
+  var keys = Object.keys(fruits);
+
+  for (var i = 0; i < 8; i++) {
+    var key = keys[i];
+     console.log(key)
+    // Look at each fruit object!
+     fruit = fruits[key];
+//      console.log(fruit.type)
+      
+       if(fruit.type=="basic"){
+       noNote.style("display","block");
+//           console.log(fruit.type)
+       }
+       if(fruit.type=="hyde"){
+       noNote.style("display","none");
+//           console.log(fruit.type)
+       }
+      
+      if(fruit.color==1){
+
+    aa=createButton("").addClass("note").parent(rape).style("background",cl1)
+       
+createP(fruit.title).parent(aa).addClass("ntext")
+ createP(fruit.date).parent(aa).addClass("dtext")
+ jij = createA("#",key).parent(aa).addClass("thanks")
+        jij.mousePressed(obig);
+        aa.id("jj")
+       if(fruit.delete=="yes"){
+          aa.style("display","none")
+      }   
+
+    }
+      
+            if(fruit.color==2){
+ aa=createButton("").addClass("note").parent(rape).style("background",cl2)    
+createP(fruit.title).parent(aa).addClass("ntext")
+ createP(fruit.date).parent(aa).addClass("dtext");
+//createButton("").parent(aa).addClass("fas fa-pencil-alt editB");
+ jij = createA("#",key).parent(aa).addClass("thanks")
+        jij.mousePressed(obig);
+        aa.id("jj")
+       if(fruit.delete=="yes"){
+          aa.style("display","none")
+      }   
+
+    }
+            if(fruit.color==3){
+
+    aa=createButton("").addClass("note").parent(rape).style("background",cl3)
+       
+createP(fruit.title).parent(aa).addClass("ntext")
+ createP(fruit.date).parent(aa).addClass("dtext")
+ jij = createA("#",key).parent(aa).addClass("thanks")
+        jij.mousePressed(obig);
+        aa.id("jj")
+       if(fruit.delete=="yes"){
+          aa.style("display","none")
+      }   
+
+    }
+      
+            if(fruit.color==4){
+ aa=createButton("").addClass("note").parent(rape).style("background",cl4)
+       
+createP(fruit.title).parent(aa).addClass("ntext")
+ createP(fruit.date).parent(aa).addClass("dtext")
+ jij = createA("#",key).parent(aa).addClass("thanks")
+        jij.mousePressed(obig);
+        aa.id("jj")
+        if(fruit.delete=="yes"){
+          aa.style("display","none")
+      }  
+    }
+      
+            if(fruit.color==5){
+ aa=createButton("").addClass("note").parent(rape).style("background",cl5)
+createP(fruit.title).parent(aa).addClass("ntext")
+ createP(fruit.date).parent(aa).addClass("dtext")
+ jij = createA("#",key).parent(aa).addClass("thanks")
+        jij.mousePressed(obig);
+        aa.id("jj")
+       if(fruit.delete=="yes"){
+          aa.style("display","none");
+           console.log(fruit.delete)
+      }   
+
+    }
+      
+      
+
+
+
+     
+  }
+}
+
 
 function finished(error) {
   if (error) {
@@ -226,13 +353,14 @@ function finished(error) {
   }
 }
 function draw(){
-    console.log(clr)
+    console.log(nm)
 //    curs.position(mouseX,mouseY)
 var rand = random(1,9)
 var ra = Math.round(rand);
   
 //document.getElementById("of").innerHTML = input.value().length+"/60"
-    
+    // make sure and go down to the second page
+
 
 
     }
@@ -242,6 +370,8 @@ function showPallet(){
     pallet.style("height","50vh");
     sp.style("display","none");    
     hp.style("display","block");
+                   window.scrollTo(0, 0);
+
 }
 
 function hidePallet(){
@@ -270,6 +400,8 @@ baap.style("background","#252525");
     input1.style("color","white")
     pp.style("background","#3b3b3b")
 //        d1.style("background","#151515  ")
+//        document.getElementById("op").style ="background : #3b3b3b"
+
     b1.style("color","#f7f7f7")
     d1.style("background","#252525  ")
         noNote.style("color","#f7f7f7");
@@ -296,7 +428,8 @@ function dys(){
     d1.style("border-bottom","2px solid #e7e9ed");
         d1.style("border-right","2px solid #e7e9ed");
     pp.style("background","#efefef")
-    b1.style("color","gray")
+//    document.getElementById("op").style ="background : #efefef"
+//    b1.style("color","gray")
     noNote.style("color","black")
      noNote.style("color","#858585");
     noNote.style("background","white");
@@ -385,7 +518,7 @@ function gotData1(data) {
       
         if(fruit.color==1){
  aa=createButton("").addClass("note").parent(wrap).style("background",cl1)    
-createP(fruit.note).parent(aa).addClass("ntext")
+createP(fruit.title).parent(aa).addClass("ntext")
  createP(fruit.date).parent(aa).addClass("dtext")
  jij = createA("#",key).parent(aa).addClass("thanks")
         jij.mousePressed(obig);
@@ -425,7 +558,7 @@ function gotData2(data) {
 
          if(fruit.color==2){
  aa=createButton("").addClass("note").parent(wrap).style("background",cl2)    
-createP(fruit.note).parent(aa).addClass("ntext")
+createP(fruit.title).parent(aa).addClass("ntext")
  createP(fruit.date).parent(aa).addClass("dtext")
  jij = createA("#",key).parent(aa).addClass("thanks")
         jij.mousePressed(obig);
@@ -467,7 +600,7 @@ function gotData3(data) {
 
         if(fruit.color==3){
  aa=createButton("").addClass("note").parent(wrap).style("background",cl3)    
-createP(fruit.note).parent(aa).addClass("ntext")
+createP(fruit.title).parent(aa).addClass("ntext")
  createP(fruit.date).parent(aa).addClass("dtext")
  jij = createA("#",key).parent(aa).addClass("thanks")
         jij.mousePressed(obig);
@@ -508,7 +641,7 @@ function gotData4(data) {
        }
          if(fruit.color==4){
  aa=createButton("").addClass("note").parent(wrap).style("background",cl4)    
-createP(fruit.note).parent(aa).addClass("ntext")
+createP(fruit.title).parent(aa).addClass("ntext")
  createP(fruit.date).parent(aa).addClass("dtext")
  jij = createA("#",key).parent(aa).addClass("thanks")
         jij.mousePressed(obig);
@@ -545,7 +678,7 @@ function gotData5(data) {
        }
          if(fruit.color==2){
  aa=createButton("").addClass("note").parent(wrap).style("background",cl2)    
-createP(fruit.note).parent(aa).addClass("ntext")
+createP(fruit.title).parent(aa).addClass("ntext")
  createP(fruit.date).parent(aa).addClass("dtext")
  jij = createA("#",key).parent(aa).addClass("thanks")
         jij.mousePressed(obig);
@@ -599,6 +732,7 @@ function filter5(){
 function obig(){
     console.log(this.html());
     nm = localStorage.uid+"/"+this.html()
+    key = this.html();
     console.log(nm)
     var ref = database.ref(nm);
     ref.on("value", showNote, errData);
@@ -606,9 +740,10 @@ function obig(){
     function showNote(data){
         var fnt = data.val();
         console.log(fnt)
-               document.getElementById("sklh").style = "display : block";
+               window.scrollTo(0, 0);
+     document.getElementById("sklh").style = "display : block";
  document.getElementById("fpcon").style = "display : block";
-        
+        chutix = fnt.note;
        if(fnt.color ==1){
            dvA.style("background",cl1)
        } 
@@ -624,11 +759,70 @@ function obig(){
          if(fnt.color ==5){
            dvA.style("background",cl5)
        } document.getElementById("conta").innerHTML = fnt.note;
+      document.getElementById("tits").innerHTML = fnt.note;
     }
 }
 
 function hideFull(){
  document.getElementById("sklh").style = "display : none";
  document.getElementById("fpcon").style = "display : none";
+}
+
+function editMe(){
+        document.getElementById("conta").style = "display:none";
+    document.getElementById("teraBaap").style = "display:none";
+        ipos = createElement("textarea",chutix).parent(dvA).addClass("newText");
+    sendBaa = createButton("").addClass("fa fa-car editA").parent(dvA);
+    sendBaa.mousePressed(sendUpdate)
+    
+}
+
+function removeMe(){
+         var data ={
+          delete : "yes"
+         
+     }
+database.ref(nm).update(data,finished);
+console.log("send called");
+    
+ var ref = database.ref(localStorage.uid);
+    ref.on("value", gotData, errData);
+    hideFull();
+    
+}
+
+function sendUpdate(){
+    valhu = ipos.value();
+    console.log(valhu)
+    document.getElementById("conta").style = "display:block";
+ document.getElementById("teraBaap").style = "display:block";
+    ipos.style("display","none");
+        sendBaa.style("display","none");
+    var data ={
+          note : valhu,
+        date : day()+" "+mont+" "+year()
+        
+         
+     }
+database.ref(nm).update(data,finished);
+console.log("send called");
+    
+ var ref = database.ref(localStorage.uid);
+    ref.on("value", gotData, errData);
+    hideFull();
+}
+
+function opPro(){
+    document.getElementById("prof").style="display : block";
+    var ref = database.ref(localStorage.uid);
+    ref.on("value", gotPata, errData);
+    document.body.style = "overflow : hidden";
+}
+
+function backHome(){ document.getElementById("prof").style="display : none";
+                        load.style("display","block")
+
+                     var ref = database.ref(localStorage.uid);
+    ref.on("value", gotPata, errData);
 }
 
