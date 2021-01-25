@@ -563,14 +563,47 @@ display: inline-block;
     width : fit-content;
     color : #454545;
     margin-left: 2vw;
+/*    padding-bottom: 100vh;*/
 /*    font-weight: 600;*/
 /*    background: blue;*/
 }
 
 .editB{
     display: inline-block;
-    margin-top: -9vh;
-    margin-left: 35%;
+    margin-top: 44vh;
+    margin-left: -8vw;
+    padding : 2vw;
+    padding-left : 2vw;
+    padding-right : 2vw;
+    position: absolute;
+    font-size: 20px;
+    background: black;
+    border-radius: 90px;
+    border : 0px;
+    z-index: 15;
+    color  : white;
+
+}
+ #prof{
+        display: none;
+     -webkit-animation-name : in-topa;
+     -webkit-animation-duration : 1s;
+    }
+
+@keyframes in-topa{
+    from{
+        margin-top: -100vh;
+        opacity : 0;
+    }
+     to{
+        margin-top: 0vh;
+        opacity : 1;
+    }
+}
+.editA{
+    display: inline-block;
+    margin-top: 28.5vh;
+    margin-left: -4vw;
     padding : 2vw;
     padding-left : 2vw;
     padding-right : 2vw;
@@ -594,7 +627,7 @@ display: inline-block;
     z-index: 50;
 }
   .bapuji{
-        position: absolute;
+        position: fixed;
         top : 0;
         left : 0;
         width : 100vw;
@@ -624,15 +657,46 @@ display: inline-block;
 
 .pata{
     font-size: 30px;
-/*    color : black;*/
-    background: white;
+    color : white;
+    background: black;
     border : none;
-    margin-left: 80%;
+    display: inline-block;
+    margin-left: 89%;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+
+}
+.tata{
+    font-size: 15px;
+    color : white;
+    background: black;
+    border : none;
+    position: absolute;
+    display: inline-block;
+    margin-left: -1vw;
+/*    margin-top: -2vh;*/
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top-right-radius: 5px;    
+    padding: 1.6vh;
+/*        padding-top: 2vh;*/
+
+}
+
+.tata:hover{
+    background: red;
+}
+.pata:hover{
+    background: blue;
 }
 .bapuji{
     z-index: 100;
     display: none;
 }
+
+ #op{
+      margin-left: 5vw;   
+    }
 @media screen and (min-width : 749px){
 .ntext{
     padding-bottom: 4vh;
@@ -661,7 +725,7 @@ display: inline-block;
         height : 60.6vh;
         border-radius: 20px;
         margin-top: 18vh;
-        -webkit-animation-name : oneU;
+/*        -webkit-animation-name : oneU;*/
         -webkit-animation-duration : .8s;
         display: none;
     } 
@@ -709,9 +773,19 @@ display: inline-block;
           max-height: 50px
 
     }
+        #nam{
+
+    font-size: 11vw;
+
+}
+
 }
 }
 @media screen and (max-width : 748px){
+   
+    #op{
+      margin-right: 15vw;   
+    }
     .pre{
     margin-top: 15vw;
     width : 20%;
@@ -742,7 +816,7 @@ display: inline-block;
 
     .note{
         width : 44%;
-        height: 40vw;
+        height: 42vw;
         font-size: 17px;
     }
     
@@ -1006,7 +1080,7 @@ border-radius: 5px;
         padding-right: 5vw;
         border-radius: 20px;
         margin-left: 15%;;
-        -webkit-animation-name : oneU;
+/*        -webkit-animation-name : oneU;*/
         -webkit-animation-duration : .8s;
         display: none;
     }  
@@ -1018,6 +1092,22 @@ border-radius: 5px;
         height : 70%;
         overflow: scroll;
     }
+    .newText{
+       color : black;
+        font-size: 25px;
+        margin-top: -4.3vh;
+        margin-left: -2px;
+        height : 70%;  
+        border : 0px;
+        background: rgba(255,255,255,0.1);
+        font-family: sans-serif;
+        outline : none;
+        border-radius: 10px;
+    }
+    
+    .ntext:focus{
+        border : 1px solid gray;
+    }
     
     #tits{
         font-size: 40px;
@@ -1025,11 +1115,102 @@ border-radius: 5px;
     }
     
     .thanks:hover{
-        background: blue
+/*        background: blue*/
     }
     .thanks:hover{
-        background: red;
+/*        background: red;*/
     }
+      .profile{
+        position: absolute;
+        top : 0;
+        background: #f9f9ff;
+          z-index: 50;
+          width : 100%;
+          height : 100vh;
+    }
+    
+    .mp{
+        background: white;
+        padding-bottom : 5vh;
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+        padding-left : 4vw;
+        box-shadow: 0px 2px 10px 2px rgba(0,0,0,.1)
+    }
+    
+    .circle{
+        background: hotpink;
+/*        margin-left: 40%;*/
+        width : 14vw;
+        height : 10vh;
+        margin-top: -8vh;
+            border-radius: 100vw;
+    }
+    #babare{
+        margin-top: 2vh;
+        margin-left: 1vw;
+    }
+    
+    .back{
+        background: none;
+        border : 0px;
+        font-size: 15px;
+        margin-top: 2vh;
+/*        color : #FAFBFD*/
+    }
+    .Details{
+        width : 100%;
+        text-align: center;
+    }
+    
+    #emil{
+        margin-top: -1vh;
+    }
+    #place{
+        margin-top: -1vh;
+    }
+    
+    .stats{
+        width : 100%;
+        margin-left: 5vw;
+        margin-top: -1vh;
+        text-align: left;
+    }
+    
+    .inli{
+        display: inline;
+        margin-left: 20vw;
+        padding-bottom: 200px;
+    }
+    
+    .laure{
+        margin-left: 22vw;
+                display: inline;
+    }
+    .lauren{
+        margin-left: 26.5vw;
+        display: inline-block;
+        margin-top: -2vh
+    }
+    
+    .rape{
+/*        background: rgba(0,0,0,0.05);*/
+        width : 100vw;
+        height : 36vh;
+        margin-top: 1vh;
+        overflow: hidden;
+        white-space: none;
+        margin-left: 2vw;
+            
+    }
+    
+    .rape::-webkit:-scrollbar{
+        display : none;
+    }
+    
+   
+    
+    
 }
 
 
@@ -1048,6 +1229,8 @@ border-radius: 5px;
         margin : 22.5vh;
         margin-left : 15%;
     }
+    
+  
 }
 
 
