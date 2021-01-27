@@ -165,10 +165,14 @@ function gotData(data) {
 
     aa=createButton("").addClass("note").parent(wrap).style("background",cl1)
        
-createP(fruit.title).parent(aa).addClass("ntext")
+createP(fruit.title).parent(aa).addClass("mtext")
+          createP(fruit.note).parent(aa).addClass("ntext")
  createP(fruit.date).parent(aa).addClass("dtext")
- jij = createA("#",key).parent(aa).addClass("thanks")
-        jij.mousePressed(obig);
+ 
+         jij =  createButton("").addClass("fa fa-trash delete").parent(aa)
+          jij.mousePressed(removeMe)
+              jij.style("display","none")
+        ;
         aa.id("jj")
        if(fruit.delete=="yes"){
           aa.style("display","none")
@@ -176,27 +180,37 @@ createP(fruit.title).parent(aa).addClass("ntext")
 
     }
       
-            if(fruit.color==2){
- aa=createButton("").addClass("note").parent(wrap).style("background",cl2)    
-createP(fruit.title).parent(aa).addClass("ntext")
- createP(fruit.date).parent(aa).addClass("dtext");
-//createButton("").parent(aa).addClass("fas fa-pencil-alt editB");
- jij = createA("#",key).parent(aa).addClass("thanks")
-        jij.mousePressed(obig);
+if(fruit.color==2){
+
+    aa=createButton("").addClass("note").parent(wrap).style("background",cl2)
+       
+createP(fruit.title).parent(aa).addClass("mtext")
+          createP(fruit.note).parent(aa).addClass("ntext")
+ createP(fruit.date).parent(aa).addClass("dtext")
+ 
+         jij =  createButton("").addClass("fa fa-trash delete").parent(aa)
+          jij.mousePressed(removeMe)
+              jij.style("display","none")
+        ;
         aa.id("jj")
        if(fruit.delete=="yes"){
           aa.style("display","none")
       }   
 
     }
-            if(fruit.color==3){
+      
+if(fruit.color==3){
 
     aa=createButton("").addClass("note").parent(wrap).style("background",cl3)
        
-createP(fruit.title).parent(aa).addClass("ntext")
+createP(fruit.title).parent(aa).addClass("mtext")
+          createP(fruit.note).parent(aa).addClass("ntext")
  createP(fruit.date).parent(aa).addClass("dtext")
- jij = createA("#",key).parent(aa).addClass("thanks")
-        jij.mousePressed(obig);
+ 
+         jij =  createButton("").addClass("fa fa-trash delete").parent(aa)
+          jij.mousePressed(removeMe)
+              jij.style("display","none")
+        ;
         aa.id("jj")
        if(fruit.delete=="yes"){
           aa.style("display","none")
@@ -204,34 +218,43 @@ createP(fruit.title).parent(aa).addClass("ntext")
 
     }
       
-            if(fruit.color==4){
- aa=createButton("").addClass("note").parent(wrap).style("background",cl4)
+if(fruit.color==4){
+
+    aa=createButton("").addClass("note").parent(wrap).style("background",cl4)
        
-createP(fruit.title).parent(aa).addClass("ntext")
+createP(fruit.title).parent(aa).addClass("mtext")
+          createP(fruit.note).parent(aa).addClass("ntext")
  createP(fruit.date).parent(aa).addClass("dtext")
- jij = createA("#",key).parent(aa).addClass("thanks")
-        jij.mousePressed(obig);
-        aa.id("jj")
-        if(fruit.delete=="yes"){
-          aa.style("display","none")
-      }  
-    }
-      
-            if(fruit.color==5){
- aa=createButton("").addClass("note").parent(wrap).style("background",cl5)
-createP(fruit.title).parent(aa).addClass("ntext")
- createP(fruit.date).parent(aa).addClass("dtext")
- jij = createA("#",key).parent(aa).addClass("thanks")
-        jij.mousePressed(obig);
+ 
+         jij =  createButton("").addClass("fa fa-trash delete").parent(aa)
+          jij.mousePressed(removeMe)
+              jij.style("display","none")
+        ;
         aa.id("jj")
        if(fruit.delete=="yes"){
-          aa.style("display","none");
-           console.log(fruit.delete)
+          aa.style("display","none")
       }   
 
     }
       
-      
+if(fruit.color==5){
+
+    aa=createButton("").addClass("note").parent(wrap).style("background",cl5)
+       
+createP(fruit.title).parent(aa).addClass("mtext")
+          createP(fruit.note).parent(aa).addClass("ntext")
+ createP(fruit.date).parent(aa).addClass("dtext")
+ 
+         jij =  createButton("").addClass("fa fa-trash delete").parent(aa)
+          jij.mousePressed(removeMe)
+              jij.style("display","none")
+        ;
+        aa.id("jj")
+       if(fruit.delete=="yes"){
+          aa.style("display","none")
+      }   
+
+    }
 
 
 
@@ -273,7 +296,7 @@ function gotPata(data) {
 createP(fruit.title).parent(aa).addClass("ntext")
  createP(fruit.date).parent(aa).addClass("dtext")
  jij = createA("#",key).parent(aa).addClass("thanks")
-        jij.mousePressed(obig);
+        ;
         aa.id("jj")
        if(fruit.delete=="yes"){
           aa.style("display","none")
@@ -287,7 +310,7 @@ createP(fruit.title).parent(aa).addClass("ntext")
  createP(fruit.date).parent(aa).addClass("dtext");
 //createButton("").parent(aa).addClass("fas fa-pencil-alt editB");
  jij = createA("#",key).parent(aa).addClass("thanks")
-        jij.mousePressed(obig);
+        ;
         aa.id("jj")
        if(fruit.delete=="yes"){
           aa.style("display","none")
@@ -301,7 +324,7 @@ createP(fruit.title).parent(aa).addClass("ntext")
 createP(fruit.title).parent(aa).addClass("ntext")
  createP(fruit.date).parent(aa).addClass("dtext")
  jij = createA("#",key).parent(aa).addClass("thanks")
-        jij.mousePressed(obig);
+        ;
         aa.id("jj")
        if(fruit.delete=="yes"){
           aa.style("display","none")
@@ -315,7 +338,7 @@ createP(fruit.title).parent(aa).addClass("ntext")
 createP(fruit.title).parent(aa).addClass("ntext")
  createP(fruit.date).parent(aa).addClass("dtext")
  jij = createA("#",key).parent(aa).addClass("thanks")
-        jij.mousePressed(obig);
+        ;
         aa.id("jj")
         if(fruit.delete=="yes"){
           aa.style("display","none")
@@ -327,7 +350,7 @@ createP(fruit.title).parent(aa).addClass("ntext")
 createP(fruit.title).parent(aa).addClass("ntext")
  createP(fruit.date).parent(aa).addClass("dtext")
  jij = createA("#",key).parent(aa).addClass("thanks")
-        jij.mousePressed(obig);
+        ;
         aa.id("jj")
        if(fruit.delete=="yes"){
           aa.style("display","none");
@@ -402,7 +425,7 @@ baap.style("background","#252525");
 //        d1.style("background","#151515  ")
 //        document.getElementById("op").style ="background : #3b3b3b"
 
-    b1.style("color","#f7f7f7")
+//    b1.style("color","#f7f7f7")
     d1.style("background","#252525  ")
         noNote.style("color","#f7f7f7");
     noNote.style("background","#151515");
@@ -521,7 +544,7 @@ function gotData1(data) {
 createP(fruit.title).parent(aa).addClass("ntext")
  createP(fruit.date).parent(aa).addClass("dtext")
  jij = createA("#",key).parent(aa).addClass("thanks")
-        jij.mousePressed(obig);
+        ;
         aa.id("jj")
           
 
@@ -561,7 +584,7 @@ function gotData2(data) {
 createP(fruit.title).parent(aa).addClass("ntext")
  createP(fruit.date).parent(aa).addClass("dtext")
  jij = createA("#",key).parent(aa).addClass("thanks")
-        jij.mousePressed(obig);
+        ;
         aa.id("jj")
           
 
@@ -603,7 +626,7 @@ function gotData3(data) {
 createP(fruit.title).parent(aa).addClass("ntext")
  createP(fruit.date).parent(aa).addClass("dtext")
  jij = createA("#",key).parent(aa).addClass("thanks")
-        jij.mousePressed(obig);
+        ;
         aa.id("jj")
           
 
@@ -644,7 +667,7 @@ function gotData4(data) {
 createP(fruit.title).parent(aa).addClass("ntext")
  createP(fruit.date).parent(aa).addClass("dtext")
  jij = createA("#",key).parent(aa).addClass("thanks")
-        jij.mousePressed(obig);
+        ;
         aa.id("jj")
           
 
@@ -681,7 +704,7 @@ function gotData5(data) {
 createP(fruit.title).parent(aa).addClass("ntext")
  createP(fruit.date).parent(aa).addClass("dtext")
  jij = createA("#",key).parent(aa).addClass("thanks")
-        jij.mousePressed(obig);
+        ;
         aa.id("jj")  
 
     }
@@ -691,7 +714,13 @@ createP(fruit.title).parent(aa).addClass("ntext")
   }
 }
 
+function filter0(){
+        bmag.style("display","none")
 
+    console.log("I Filter 1");
+   var ref = database.ref(localStorage.uid);
+    ref.on("value", gotData, errData);
+}
 function filter1(){
         bmag.style("display","none")
 
@@ -731,6 +760,8 @@ function filter5(){
 
 function obig(){
     console.log(this.html());
+            jij.style("display","block")
+
     nm = localStorage.uid+"/"+this.html()
     key = this.html();
     console.log(nm)
