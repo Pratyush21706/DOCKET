@@ -3,7 +3,7 @@ html, body {
   padding: 0px;
     font-family: sans-serif;
     outline: none;
-    overflow-x: hidden;
+    overflow: hidden;
     cursor:url(normal.png), default;	
 /*    background: ;*/
 /*    color : white;*/
@@ -13,8 +13,8 @@ body::-webkit-scrollbar{
 }
 
 button{
-        cursor:url(btn.png), default;	
-
+    cursor:url(btn.png), default;	
+    outline: none;
 }
 
 .lef{
@@ -57,7 +57,16 @@ button{
 }
 
 
+.god{
+    margin-top: -2vh;
+    background: none;
+    height : 105vh;
+    overflow: scroll;
+}
 
+.god::-webkit-scrollbar{
+    display: none;
+}
 .pp1{
     margin-top: -5px;
     font-size: 18px;
@@ -288,13 +297,29 @@ display: inline-block;
 /*    display: table-cell;*/
   vertical-align: bottom;
 }
+    .wrapper{
+
+            -webkit-column-count: 2;
+
+  -moz-column-count:2;
+
+  column-count: 2;
+
+          -webkit-column-gap: 1em;
+
+  -moz-column-gap: 1em;
+
+  column-gap: -100vw;
+
+    }
+
 
 
 
 .catB{
     width : 100vw;
     background: rgba(0,0,0,0.5);
-    height : 100vh;
+    height : 102vh;
     position: absolute;
     top : 0;
     z-index: 10;
@@ -322,7 +347,7 @@ display: inline-block;
 }
 .clrss{
     width : 14%;
-    height : 30%;
+    height : 25%;
     background: red;
     border-radius: 900px;
     border : 2px solid #f7f7f7;
@@ -370,13 +395,12 @@ display: inline-block;
     display : none;
 }   
 .note{
-    width : 22%;
+    width : 20vw;
     padding : 1vw;
 /*        padding-bottom : 4vw;*/
 /*position: sticky*/
-/*    height : 50%;*/
     margin-left: 2%;
-    display:inline-block;
+/*    display:inline-block;*/
     border-radius: 2vw;
     font-size: 17px;
     border : 0px;
@@ -392,8 +416,9 @@ display: inline-block;
 /*    overflow: */
     outline:none;
     height : 0%;
-    transition: .5s bounce;
+    transition: .5s ease-in-out;
         cursor:url(normal.png), default;	
+/*    height : 35vh;*/
 
 }
 .note:hover{
@@ -523,6 +548,7 @@ display: inline-block;
 
 .wrapper{
     margin-top: 20vh;
+
 }
 
 
@@ -651,6 +677,12 @@ display: inline-block;
     #conta::-webkit-scrollbar{
         display: none;
     }
+    .mtext{
+
+        font-weight: 700;
+
+    }
+
 #tits{
     margin-top: -2vh;
 }
@@ -698,20 +730,12 @@ display: inline-block;
       margin-left: 5vw;   
     }
 @media screen and (min-width : 749px){
-.ntext{
-    padding-bottom: 4vh;
-/*    background: red;*/
-    overflow: hidden;
-    line-height: 24px;  
-    max-height : 18vh;
-    min-height : 18vh;
 
-}
     
    #tits{
         font-size: 40px;
     }
-      
+   
     .fpc{
         width : 30%;
         background: royalblue;
@@ -743,12 +767,7 @@ display: inline-block;
                 height : 55px;
 
     }
-    .note{
-        width : 42%;
-        height: 15vw;
-        font-size: 15px;
-        padding : 2%;
-    }
+  
     .ntext::after{
 /*    content:"...";*/
     font-size: 25px;
@@ -768,9 +787,10 @@ display: inline-block;
 /*     color: red*/
   }
       .add{
-        width : 50px;
-                height : 50px;
-          max-height: 50px
+        width : 60px;
+        height : 60px;
+        max-height: 100px;
+        font-size: 15em;
 
     }
         #nam{
@@ -781,8 +801,8 @@ display: inline-block;
 
 }
 }
-@media screen and (max-width : 748px){
-   
+@media screen and (max-width : 908px){
+  
     #op{
       margin-right: 15vw;   
     }
@@ -793,16 +813,17 @@ display: inline-block;
     .manage{
     width : 100%;
 }
-    .note{
-        transition  : .5s;
-    }
-    .ntext{
-        height : 20vh;
+  
+    .mtext{
+/*        height : fit-content;*/
         width  : 90%;
 /*        background: red;*/
+        font-weight: 700;
         margin-left: 5%;
         overflow: hidden;
+        font-size: 4vw;
     }
+
     .note:s{
 /*    position: absolute;*/
     top : 0;
@@ -813,12 +834,18 @@ display: inline-block;
     .pre{
     margin-top: 35vw;
 }
-
-    .note{
-        width : 44%;
-        height: 42vw;
-        font-size: 17px;
+    .delete{
+        margin-left: 30%;
+        margin-top: -4vh;
+        padding : 1.5vh;
+        border-radius: 300px;
+        background: black;
+        color  : white;
+        font-size: 3.5vw;
+        border : 0px;
+        position: absolute;
     }
+  
     
     .wrapper{
         
@@ -915,17 +942,8 @@ margin-left: 90vw;
     .logo,.slid{
         display : none;
     }
-    .ntext{
-/*        height: fit-content;*/
-/*        background: red;*/
-/*        font-weight: 600;*/
-        font-size: 18px;
-    }
-    .note{
-/*        height : fit-content;*/
-/*        margin-top: -1vh;*/
-        position: static;
-    }
+
+   
     .lef{
         height  :0px
     }
@@ -966,9 +984,9 @@ border-radius: 5px;
 /*    background: transparent;*/
 }
     
-    .note{
-/*        position: absolute;*/
-    }
+  
+    
+   
     
     .parent{
         position: absolute;
@@ -1041,6 +1059,7 @@ border-radius: 5px;
     .pp{
         position: fixed;
         margin-top: 2vh;
+        margin-right: 4vw; 
     }
     .add{
 /*        width : 8vw;*/
@@ -1050,7 +1069,7 @@ border-radius: 5px;
 /*        margin-top: 60vh;*/
         z-index: 5;
         right : 0;
-        margin: 2vw;
+        margin: 4vw;
 /*       margin-top: 80vh;*/
         border : 0px;
         bottom : 0;
@@ -1209,7 +1228,37 @@ border-radius: 5px;
     }
     
    
+    .ntext{
+        width  : 90%;
+/*        background: blue;*/
+        height: fit-content;
+      position: relative;
+        margin-left: 2vw;
+        
+    }
+    .wrapper{
+            -webkit-column-count: 2;
+  -moz-column-count:2;
+  column-count: 2;
+          -webkit-column-gap: 1em;
+  -moz-column-gap: 1em;
+  column-gap: -100vw;
+    }
+    .note{
+        width : 44vw;
+        height : fit-content;
+        margin-left: 0px;
+    }
     
+    .kk{
+        background: none;
+        border : none;
+        display: inline;
+        font-size: 40px;
+        position: absolute;
+        margin-left: 70%;
+        margin-top: -12%
+    }
     
 }
 
