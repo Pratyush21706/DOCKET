@@ -4,77 +4,153 @@
 <head>
     <script src="js/p5.js"></script>
     <script src="js/p5.dom.min.js"></script>
-    <script src="js/index.js"></script>
+    <script src="js/sketch.js"></script>
 
 
-        <link rel="stylesheet" type="text/css" href="css/index.css">
-
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="web-fonts-with-css/css/fontawesome-all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/firebase@6.1.0/firebase.js"></script>
-
+    <link rel="icon" href="img/lOGO%20.png">
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Welcome To Docket</title>
+    <title>Docket -Keep YourselfOrganised</title>
    
 </head>
-
 <body>
-     
- <div class = "wrapper">
-       <div class = "container">
-            <img class="im" src = "img/iPhone%20XR,%20XS%20Max,%2011%20%E2%80%93%201.png">
-        <div class="bwrap">
-            <div class = "cnt">
-                <h1>WELCOME</h1>
-            <P>We Are Very Happy To Have
-You  Onboard And We Strive
-To Provide You The Best 
-User Experence  </P>
-            </div>
-            
-            <button class="op" onclick='fullit()'>Get Started  </button> 
-             
-        </div>
-     </div>
-     
-     <div class="main">
-         <div class="mp">
-            <img src= "img/d1.jpg">
-         </div>
-         
-        <div class="pref">
-             <h2>Prefereces</h2>
-            <span id ="qs">What Shall We call You?</span>
-        <input type = "text" class="ipp" placeholder = "eg : Sam21706">
-            <br><br>
-          <div class="mt">
-            <span id ="qs" class="mt">Which UI skin do you prefer?</span>
-              <br>
-        <button class="chc ch1" onclick="dm()">
-            <img class="nall" src="img/d.png">
-        </button>
-               <button class="chc" onclick="lm()">
-            <img class="nall" src="img/l.png">
-        </button>
-        </div> 
-            
-             <button class=" oop" onclick='check()'>Lets Go  </button> 
-        </div>
-     </div>
-     
-     <div class="load">
-        <img class="pre" src = "img/load0.gif">
-     </div>
-     
     
-</div>
+    <div class= "lef"> 
+        <center>
+        <h3 class = "logo">Docket</h3>
+        <button class = "add sw" onclick="showPallet()">+</button>
+        <button class = "add hd" onclick="hidePallet()">×</button>
+            <div class="pallet">
+                <button class = "cl1 cl" onclick="addNote(1)"></button><br>
+                <button class = "cl2 cl" onclick="addNote(2)"></button><br>
+                <button class = "cl3 cl" onclick="addNote(3)"></button><br>
+                <button class = "cl4 cl" onclick="addNote(4)"></button><br>
+                <button class = "cl5 cl" onclick="addNote(5)"></button>
+            </div>
+        </center>
+    </div>
+ 
+    <div class= "top">
+       <button class="pp" onclick="sendTo()"><i class="fas fa-filter"></i></button>
+        <div class="slid">
+            <button class="pp1"  id = "nt" onclick="night()"><i class="fa fa-moon"></i></button>
+            <button class="pp1"  id = "dy" onclick="dys()"><i class="fa fa-sun"></i></button>
+            
+        </div>
+        <div class= "b"></div><h1 id="nam">Docket</h1>
+    </div>
+          
+    
+    <div class = "csor">
+    </div>
+
+    <div class="dsd">
+                <div class= "parent">
+                    <input type = "text" class = "jhajha" id="cnt0" 
+                           maxlength  = "20" placeholder = 
+"Title">
+                    <textarea class=  "ipdp" id = "cnt1" placeholder="Note.." spellcheck="false" ></textarea>
+                   <button class= "addText" onclick="addNt()">Save</button>
+                </div>
+        
+    </div>
+    <div class="god">
+    <div class="wrapper">
+    <div class="load">
+    <center>        <img class="pre" src = "img/load.gif">
+</center>
+        
+        </div>
+        
+        <center>
+            <div class = "nothing">
+           <img  class="manage" src = "img/op.jpg">
+            <br>
+            <p class = "erms">Welcome to DOCKET, Start your amazing journey by adding notes.</p>
+        <button  class="jij"onclick="showPallet()">Add Note</button>
+                
+        </div>
+        </center>
+    </div>
+</div>        
+    
+
+    <div class="catB">
+        <div class="cPan">
+            <p class="ma">Sort By  <i class = "fas fa-angle-down"></i></p>
+            <button class="kk" onclick ="hideOp()">×</button>
+            <div class="tp">
+                <button class="kakhor" style =" color : dodgerblue; margin-left: 1vw;">Color</button>
+                <button class="kakhor" onclick ="filter0()"> All Notes</button>
+                  
+            </div>
+            <button class = "clrss" style="background : #ffc972" onclick ="filter1()"></button>
+            <button class = "clrss" style="background : #ff9b73" onclick ="filter2()" ></button>
+            <button class = "clrss" style="background : #b692fe" onclick ="filter3()" ></button>
+            <button class = "clrss" style="background : #01d4ff" onclick ="filter4()" ></button>
+
+            <button class = "clrss" style="background : #e4ee90" onclick ="filter5()" ></button>
+        </div>
+    </div>
+    <div class="bapuji" id="sklh">
+        <div class="fpc"  id="fpcon">
+            <div class="navigate">
+            <button class="pata" onclick = "hideFull()">×</button>
+                <button class="fa fa-trash tata" onclick = "removeMe()"></button>
+            <button class="fas fa-pencil-alt editB" onclick = "editMe()" id="teraBaap"></button>
+            </div>
+            <div class="dsd">
+<!--                <div class= "parent">-->
+                    <input type = "text" class = "jhajha" id="ff0" 
+                           maxlength  = "20" placeholder = 
+"Title">
+                    <textarea class=  "ipdp" id = "ff1" placeholder="Note.." spellcheck="false" ></textarea>
+                   <button class= "addText" onclick="addNt()">Save</button>
+<!--                </div>-->
+        
+    </div>
+    </div>
+    </div>
+    
+    <div class= "profile" id = "prof">
+        <div class="mp">
+            <button class="back" onclick="backHome()">
+                <i class = "fa fa-arrow-left"></i></button>
+             
+                <h2 id="babare">
+                    My Profile
+                </h2>
+                <br><br><br>
+               <center>
+             <div class="circle"> 
+                 
+                </div>
+                
+               <div class="Details">
+                    <h2 id ="kam">Pratyush</h2> 
+                   <p id="emil">skmishra.kumar@gmail.com</p>
+                   <p id ="place">London, Uk</p>
+                   <br><br>
+                </div>
+           <div class="stats">
+                    <p class="inli">Notes</p>
+                       <p class="inli"> Followers</p><br><br>
+               <h3 class="  laure"> 50</h3>
+                <h3 class=" lauren"> 100</h3>
+
+                   </div>
+                   </center>         
+        </div>
+         <div class="rape">
+               
+            </div>
+    </div>
 </body>
 </html>
-
-
-
-        
 
 
