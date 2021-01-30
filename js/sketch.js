@@ -539,17 +539,23 @@ function gotData1(data) {
            console.log(fruit.type)
        }
       
-        if(fruit.color==1){
- aa=createButton("").addClass("note").parent(wrap).style("background",cl1)    
-createP(fruit.title).parent(aa).addClass("ntext")
+      if(fruit.color==1){
+
+    aa=createButton("").addClass("note").parent(wrap).style("background",cl1)
+       
+createP(fruit.title).parent(aa).addClass("mtext")
+          createP(fruit.note).parent(aa).addClass("ntext")
  createP(fruit.date).parent(aa).addClass("dtext")
- jij = createA("#",key).parent(aa).addClass("thanks")
+ 
+         jij =  createButton("").addClass("fa fa-trash delete").parent(aa)
+          jij.mousePressed(removeMe)
+              jij.style("display","none")
         ;
         aa.id("jj")
-          
-
-    }
-    
+       if(fruit.delete=="yes"){
+          aa.style("display","none")
+      }   
+      }
   }
 }
 function gotData2(data) {
@@ -579,18 +585,23 @@ function gotData2(data) {
        }
       
 
-         if(fruit.color==2){
- aa=createButton("").addClass("note").parent(wrap).style("background",cl2)    
-createP(fruit.title).parent(aa).addClass("ntext")
+if(fruit.color==2){
+
+    aa=createButton("").addClass("note").parent(wrap).style("background",cl2)
+       
+createP(fruit.title).parent(aa).addClass("mtext")
+          createP(fruit.note).parent(aa).addClass("ntext")
  createP(fruit.date).parent(aa).addClass("dtext")
- jij = createA("#",key).parent(aa).addClass("thanks")
+ 
+         jij =  createButton("").addClass("fa fa-trash delete").parent(aa)
+          jij.mousePressed(removeMe)
+              jij.style("display","none")
         ;
         aa.id("jj")
-          
-
-    }
-
-
+       if(fruit.delete=="yes"){
+          aa.style("display","none")
+      }   
+      }
 
      
   }
@@ -622,15 +633,22 @@ function gotData3(data) {
        }
 
         if(fruit.color==3){
- aa=createButton("").addClass("note").parent(wrap).style("background",cl3)    
-createP(fruit.title).parent(aa).addClass("ntext")
+
+    aa=createButton("").addClass("note").parent(wrap).style("background",cl3)
+       
+createP(fruit.title).parent(aa).addClass("mtext")
+          createP(fruit.note).parent(aa).addClass("ntext")
  createP(fruit.date).parent(aa).addClass("dtext")
- jij = createA("#",key).parent(aa).addClass("thanks")
+ 
+         jij =  createButton("").addClass("fa fa-trash delete").parent(aa)
+          jij.mousePressed(removeMe)
+              jij.style("display","none")
         ;
         aa.id("jj")
-          
-
-    }
+       if(fruit.delete=="yes"){
+          aa.style("display","none")
+      }   
+      }
       
 
 
@@ -662,16 +680,23 @@ function gotData4(data) {
        noNote.style("display","none");
            console.log(fruit.type)
        }
-         if(fruit.color==4){
- aa=createButton("").addClass("note").parent(wrap).style("background",cl4)    
-createP(fruit.title).parent(aa).addClass("ntext")
+        if(fruit.color==4){
+
+    aa=createButton("").addClass("note").parent(wrap).style("background",cl4)
+       
+createP(fruit.title).parent(aa).addClass("mtext")
+          createP(fruit.note).parent(aa).addClass("ntext")
  createP(fruit.date).parent(aa).addClass("dtext")
- jij = createA("#",key).parent(aa).addClass("thanks")
+ 
+         jij =  createButton("").addClass("fa fa-trash delete").parent(aa)
+          jij.mousePressed(removeMe)
+              jij.style("display","none")
         ;
         aa.id("jj")
-          
-
-    }
+       if(fruit.delete=="yes"){
+          aa.style("display","none")
+      }   
+      }
   }
 }
 function gotData5(data) {
@@ -699,15 +724,23 @@ function gotData5(data) {
        noNote.style("display","none");
            console.log(fruit.type)
        }
-         if(fruit.color==2){
- aa=createButton("").addClass("note").parent(wrap).style("background",cl2)    
-createP(fruit.title).parent(aa).addClass("ntext")
- createP(fruit.date).parent(aa).addClass("dtext")
- jij = createA("#",key).parent(aa).addClass("thanks")
-        ;
-        aa.id("jj")  
+        if(fruit.color==5){
 
-    }
+    aa=createButton("").addClass("note").parent(wrap).style("background",cl5)
+       
+createP(fruit.title).parent(aa).addClass("mtext")
+          createP(fruit.note).parent(aa).addClass("ntext")
+ createP(fruit.date).parent(aa).addClass("dtext")
+ 
+         jij =  createButton("").addClass("fa fa-trash delete").parent(aa)
+          jij.mousePressed(removeMe)
+              jij.style("display","none")
+        ;
+        aa.id("jj")
+       if(fruit.delete=="yes"){
+          aa.style("display","none")
+      }   
+      }
 
 
      
@@ -857,3 +890,6 @@ function backHome(){ document.getElementById("prof").style="display : none";
     ref.on("value", gotPata, errData);
 }
 
+function hideOp(){
+    bmag.style("display","none")
+}

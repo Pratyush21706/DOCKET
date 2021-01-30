@@ -1,7 +1,7 @@
 var ram = 1;
 localStorage.uid;
 localStorage.skin;
-localStorage.aaka;
+localStorage.areunoob;
 
 function setup(){
     di = select(".main");
@@ -51,7 +51,7 @@ function finished(error) {
   } else {
     console.log('data saved!');
     window.location.href = "./home.html"
-          localStorage.aaka= 1;
+          localStorage.areunoob= 1;
 
   }
 }
@@ -68,11 +68,10 @@ function dm(){
 function draw(){
      console.log(localStorage.uid);
     console.log(localStorage.skin);
-   if(localStorage.aaka==null){
-        
+   if(localStorage.areunoob==null){
+        window.location.href = "./index.html"
     }
-    if(localStorage.aaka==1){
-        window.location.href = "./home.html"
+    if(localStorage.areunoob==1){
         console.log("jj")
     }  
 }
